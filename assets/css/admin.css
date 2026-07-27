@@ -1,0 +1,24 @@
+.admin-navbar {
+    background-color: #2b2b2b;
+}
+
+.admin-navbar .navbar-brand {
+    color: #ffffff;
+}
+
+.admin-dashboard {
+    min-height: calc(100vh - 120px);
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.admin-dashboard h1 {
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+
+.admin-dashboard p {
+    margin-bottom: 12px;
+    color: #555555;
+    line-height: 1.6;
+}

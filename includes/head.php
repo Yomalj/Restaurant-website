@@ -22,7 +22,16 @@ $pageTitle = $pageTitle ?? 'Restaurant Website';
         rel="stylesheet"
         href="/restaurant-website/assets/css/style.css"
     >
+
+    <?php if (!empty($additionalStylesheet)): ?>
+        <link
+            rel="stylesheet"
+            href="<?php echo htmlspecialchars(
+                $additionalStylesheet,
+                ENT_QUOTES,
+                'UTF-8'
+            ); ?>"
+        >
+    <?php endif; ?>
 </head>
 <body>
-    
-</body>
