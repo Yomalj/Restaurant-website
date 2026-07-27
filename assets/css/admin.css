@@ -22,3 +22,30 @@
     color: #555555;
     line-height: 1.6;
 }
+
+.logout-form {
+    margin: 0;
+}
+
+.logout-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
+}
+
+.logout-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.admin-logout-message {
+    width: min(1100px, 90%);
+    margin: 15px auto 0;
+}
