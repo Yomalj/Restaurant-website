@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../backend/config/init.php';
 
 $pageTitle = 'Admin Login | Restaurant Website';
+$additionalScript = '/restaurant-website/assets/js/admin-login.js';
 
 $oldEmail = $_SESSION['old_input']['email'] ?? '';
 unset($_SESSION['old_input']);
@@ -20,21 +21,26 @@ require_once __DIR__ . '/../includes/head.php';
         </p>
 
         <?php require __DIR__ . '/../includes/flash_message.php'; ?>
+        <div
+            id="login-message"
+            class="ajax-message"
+            role="alert"
+            aria-live="polite"></div>
 
         <form
+            id="admin-login-form"
             action="/restaurant-website/backend/processes/auth/admin_login_process.php"
             method="POST"
             class="auth-form"
-        >
+            novalidate>
             <input
                 type="hidden"
                 name="csrf_token"
                 value="<?php echo htmlspecialchars(
-                    $_SESSION['csrf_token'] ?? '',
-                    ENT_QUOTES,
-                    'UTF-8'
-                ); ?>"
-            >
+                            $_SESSION['csrf_token'] ?? '',
+                            ENT_QUOTES,
+                            'UTF-8'
+                        ); ?>">
 
             <div class="form-group">
                 <label for="email">Email address</label>
@@ -44,13 +50,16 @@ require_once __DIR__ . '/../includes/head.php';
                     id="email"
                     name="email"
                     value="<?php echo htmlspecialchars(
-                        $oldEmail,
-                        ENT_QUOTES,
-                        'UTF-8'
-                    ); ?>"
+                                $oldEmail,
+                                ENT_QUOTES,
+                                'UTF-8'
+                            ); ?>"
                     autocomplete="email"
-                    required
-                >
+                    required>
+                <small
+                    id="email-error"
+                    class="field-error"
+                    aria-live="polite"></small>
             </div>
 
             <div class="form-group">
@@ -61,8 +70,11 @@ require_once __DIR__ . '/../includes/head.php';
                     id="password"
                     name="password"
                     autocomplete="current-password"
-                    required
-                >
+                    required>
+                <small
+                    id="password-error"
+                    class="field-error"
+                    aria-live="polite"></small>
             </div>
 
             <button type="submit" class="primary-button auth-button">

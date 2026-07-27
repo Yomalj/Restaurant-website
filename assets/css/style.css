@@ -202,3 +202,34 @@ body {
     background-color: #fde7e7;
     color: #8a1f1f;
 }
+
+.ajax-message {
+    display: none;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.ajax-message.is-visible {
+    display: block;
+}
+
+.ajax-message.is-error {
+    background-color: #fde7e7;
+    color: #8a1f1f;
+}
+
+.ajax-message.is-success {
+    background-color: #e5f6e8;
+    color: #175c25;
+}
+
+.field-error {
+    min-height: 18px;
+    color: #b42318;
+    font-size: 14px;
+}
+
+.form-group input.has-error {
+    border-color: #b42318;
+}
