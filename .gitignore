@@ -1,0 +1,11 @@
+# Local database credentials
+/backend/config/database.php
+
+# Uploaded menu images
+/uploads/menu-items/*
+!/uploads/menu-items/.gitkeep
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
